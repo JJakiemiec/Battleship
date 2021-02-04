@@ -2,9 +2,9 @@
 //Kelby Hubbard
 //Ship.cpp
 
+#include "Ship.hpp"
 
-
-class ship() {
-
-
+int Ship::getSize()
+{
+    return _size;
 }

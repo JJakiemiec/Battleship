@@ -1,0 +1,20 @@
+// Kelby Hubbard
+
+Wed. February 3, 2021:
+3:45PM
+Meeting with Jacob Jakiemiec
+    Discussed User Stories (and difficulties)
+    Initial Design Requirements
+        Game Class
+            Manages Players, plays Battleship, manages rules
+        Player Class
+            Contains Both Player's boards
+        Board Class
+            Contains a grid and ships on grid
+        Ship Class
+            Contains ship size and health remaining
+    Focus on the core game FIRST -> text based
+        If extra time add AI enemies (easy, medium, hard) & | GUI
+    Class Management / Heiarchy:
+        Game >> Player >> Board >> Ship 
+    
