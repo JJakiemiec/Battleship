@@ -1,0 +1,16 @@
+Jacob Jakiemiec
+
+2/4/21
+initial meeting with Kelby (1hr)
+
+The first thing we did was discuss user stories. For the core design, we decided on
+making classes for the game, player, board, and ship. Where the game has two players,
+the player has two boards, and a board has 5 ships. The only other bit feature that
+we decided to do, besides local multiplayer, was to have an AI with multiple difficulty
+levels. However, we both decided that the core gameplay must be finished before
+we can do any other features.
+
+After the user stories, we started coding. But mostly it was me trying to figure out
+how to properly get git integrated into visual studio, and also remembering how header
+and source files work with object oriented programming. But once those were figured out,
+we started working on the beggining of the ship class.
