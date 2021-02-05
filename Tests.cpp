@@ -24,10 +24,11 @@ TEST_CASE( "Board Design" )
         board.shootBoard(3,8);
         board.shootBoard(9,0);
         BoardType temp = board.getBoard();
-        
+
         REQUIRE( temp[0][0] == 's');
         REQUIRE( temp[3][8] == 's');
         REQUIRE( temp[9][0] == 's');
+        REQUIRE( temp[1][1] == 'e');
         
     }
 }
