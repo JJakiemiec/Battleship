@@ -24,3 +24,8 @@ vector<int> Ship::getCords()
 
     return temp;
 }
+
+int Ship::getShipType()
+{
+    return _shipType;
+}

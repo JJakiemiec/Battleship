@@ -21,6 +21,18 @@ Started coding. Worked on Ship.cpp / Ship.hpp
     Implemented Ship class and Ship::getSize()
 
 Thurs. February 4, 2021:
-7:30PM -> ???
+7:30PM -> 9:30PM
 Meeting with Jacob Jakiemiec
-    
+    Pair Programming:
+        Created test cases for Board Design and Ship Design
+        Started Board Class
+            Wrote board generator (default constructor)
+            Wrote getBoard
+            Wrote shootBoard
+            WRITING placeShip
+        Started Ship Class
+            Wrote getSize
+            Wrote isDestroyed
+            Wrote getCords
+            wrote getShipType
+            WRITING default constructor 

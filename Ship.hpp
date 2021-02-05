@@ -40,7 +40,8 @@ public:
     int getSize();
     bool isDestroyed();
     vector<int> getCords(); // Returns cords in this order: (x1,y1,x2,y2)
-    
+    int getShipType();
+
 
 // ***** Ship: Private Data Members *****
 private:
