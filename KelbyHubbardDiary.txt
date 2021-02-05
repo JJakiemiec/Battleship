@@ -1,7 +1,7 @@
 // Kelby Hubbard
 
 Wed. February 3, 2021:
-3:45PM
+3:45PM -> 4:30PM
 Meeting with Jacob Jakiemiec
     Discussed User Stories (and difficulties)
     Initial Design Requirements
@@ -17,4 +17,10 @@ Meeting with Jacob Jakiemiec
         If extra time add AI enemies (easy, medium, hard) & | GUI
     Class Management / Heiarchy:
         Game >> Player >> Board >> Ship 
+Started coding. Worked on Ship.cpp / Ship.hpp
+    Implemented Ship class and Ship::getSize()
+
+Thurs. February 4, 2021:
+7:30PM -> ???
+Meeting with Jacob Jakiemiec
     
