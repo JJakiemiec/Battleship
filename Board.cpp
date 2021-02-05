@@ -13,3 +13,9 @@ void Board::shootBoard(int x, int y){
     _board[x][y] = 1; // (1 == shot)
 
 }
+
+void Board::placeShip(Ship ship)
+{
+    vector<int> cords = ship.getCords();
+    
+}

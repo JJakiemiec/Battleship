@@ -13,3 +13,14 @@ bool Ship::isDestroyed()
 {
     return _destroyed;
 }
+
+vector<int> Ship::getCords()
+{
+    vector<int> temp;
+    temp.push_back(_x1);
+    temp.push_back(_y1);
+    temp.push_back(_x2);
+    temp.push_back(_y2);
+
+    return temp;
+}
