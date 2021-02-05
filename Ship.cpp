@@ -8,3 +8,8 @@ int Ship::getSize()
 {
     return _size;
 }
+
+bool Ship::isDestroyed()
+{
+    return _destroyed;
+}

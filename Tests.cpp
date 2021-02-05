@@ -32,3 +32,14 @@ TEST_CASE( "Board Design" )
         
     }
 }
+
+TEST_CASE( "Ship Design" )
+{
+    Ship smallship(2, 0,0, 0,1);
+    SECTION ( "Generate ship of correct size and stats" )
+    {
+        REQUIRE(smallship.getSize() == 2);
+        REQUIRE(smallship.isDestroyed() == false);
+        // FIXME: Add shot checking / hit checking
+    }
+}

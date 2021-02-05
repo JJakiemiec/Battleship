@@ -10,5 +10,6 @@ BoardType Board::getBoard()
 }
 
 void Board::shootBoard(int x, int y){
-    _board[x][y] = 's'; // (s = shot)
+    _board[x][y] = 1; // (1 == shot)
+
 }
