@@ -29,3 +29,8 @@ int Ship::getShipType()
 {
     return _shipType;
 }
+
+vector<std::tuple<int, int, int>> Ship::getHits()
+{
+	return _hits;
+}
