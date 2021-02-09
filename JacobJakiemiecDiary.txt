@@ -1,7 +1,7 @@
 Jacob Jakiemiec
 
 2/4/21
-initial meeting with Kelby (1hr)
+initial meeting with Kelby (1hr) pair
 
 The first thing we did was discuss user stories. For the core design, we decided on
 making classes for the game, player, board, and ship. Where the game has two players,
@@ -14,3 +14,19 @@ After the user stories, we started coding. But mostly it was me trying to figure
 how to properly get git integrated into visual studio, and also remembering how header
 and source files work with object oriented programming. But once those were figured out,
 we started working on the beggining of the ship class.
+
+2/5/21
+working on ship / board (3hr) pair
+
+For the most part, everthing went well. We spent most of the time trying to figure out how
+we were going to store the data and how the classes would interact with each other. We settled
+on having the board would hold spaces that knew if they were hit or not, and what ship (or no ship)
+were on its tile. The ship would hold where each space is and if its been hit, if it has been 
+destroyed, and its type of ship / size.
+
+2/9/21
+fiddling around (1 hr)
+
+I decided to work on specifically the ship class for a little bit, mostly just to see if we 
+could solidify some of the more abstract parts of the class. I also got the ship to know where each
+space is (hopefully).
