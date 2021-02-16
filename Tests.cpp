@@ -85,3 +85,4 @@ TEST_CASE( "Ship Design" )
 		REQUIRE(bigship.getHits()[4] == std::tuple<int, int, int>{3, 7, 0});
 	}
 }
+
