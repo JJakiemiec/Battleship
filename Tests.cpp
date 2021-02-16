@@ -1,7 +1,7 @@
 //Jacob Jakiemiec
 //Kelby Hubbard
 //Tests.cpp 
-#include "Catch.hpp"
+#include "catch.hpp"
 #include "Ship.hpp"
 #include "Board.hpp"
 #include <iostream>
