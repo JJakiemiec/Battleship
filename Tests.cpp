@@ -5,31 +5,37 @@
 #include "Ship.hpp"
 #include "Board.hpp"
 
-TEST_CASE( "Board Design" )
- {
-    Board board;
-    
+TEST_CASE("Board Design")
+{
+	Board board;
+
 	SECTION("Generate a 10x10 board of no hits ")
 	{
 		BoardType temp = board.getBoard();
-		 REQUIRE( temp[0][0].first == 0 );
-		 REQUIRE( temp[0][6].first == 0 );
-		 REQUIRE( temp[3][9].first == 0 );
-		 REQUIRE( temp[9][2].first == 0 );
+		REQUIRE(temp[0][0].first == 0);
+		REQUIRE(temp[0][6].first == 0);
+		REQUIRE(temp[3][9].first == 0);
+		REQUIRE(temp[9][2].first == 0);
 	}
-    SECTION ( "Mark a shot space as shot") 
-    {
-        board.shootBoard(0,0);
-        board.shootBoard(3,8);
-        board.shootBoard(9,0);
-        BoardType temp = board.getBoard();
+	SECTION("Mark a shot space as shot")
+	{
+		board.shootBoard(0, 0);
+		board.shootBoard(3, 8);
+		board.shootBoard(9, 0);
+		BoardType temp = board.getBoard();
 
-        REQUIRE( temp[0][0].first == 1);
-        REQUIRE( temp[3][8].first == 1);
-        REQUIRE( temp[9][0].first == 1);
-        REQUIRE( temp[1][1].first == 0);
-        
-    }
+		REQUIRE(temp[0][0].first == 1);
+		REQUIRE(temp[3][8].first == 1);
+		REQUIRE(temp[9][0].first == 1);
+		REQUIRE(temp[1][1].first == 0);
+
+	}
+	SECTION("Print the board")
+	{
+		Board print;
+		vector < vector<char>> testVector(10, vector<char>(10, '*'));
+		REQUIRE(testVector == print.getPrintableBoard);
+	}
 }
 
 TEST_CASE( "Ship Design" )
