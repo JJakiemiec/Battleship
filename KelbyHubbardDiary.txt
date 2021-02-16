@@ -38,7 +38,7 @@ Meeting with Jacob Jakiemiec
             WRITING default constructor 
 
 Tue. February 16, 2021:
-1:00PM -> 
+1:00PM -> 2:00PM
 Solo Work (Project Owner)
     Review what is capable in project currently and what needs to be worked on before deadline (Fri)
         A way to startup the game
@@ -58,4 +58,17 @@ Solo Work (Project Owner)
             together and are working on SEPERATE pieces of code. But allowing to ask questions to the 
             partner in real time could make some really convinient code and ensure you don't hit any 
             "road blocks".
-            
+2:00PM -> 3:00PM
+Solo Work (Developer)
+    Added to function Board::shootBoard
+        Checks if a ship was shot.
+            If no ship was shot, tell player
+            If a ship was shot it has to mark ship as hit and tell player
+    This might be easier without having to talk to board first. Why have a board that holds ships
+    and ship locations if the ship holds all the information. After shooting board you'd just have
+    to shoot ship also. Very redudant. Perhaps everything go through ship class, and board class either
+    doesn't exist OR just holds where something has been shot?
+        More efficient, easier to visualize
+            BUT will have to backtrack a lot of our work.
+            Worth it?
+            Will discuss with Jacob.

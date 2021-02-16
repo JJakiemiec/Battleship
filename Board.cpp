@@ -43,6 +43,32 @@ vector<vector<char>> Board::getPrintableBoard()
 void Board::shootBoard(int x, int y){
    _board[x][y].first = 1; // (1 == shot)
 
+   if (_board[x][y].second > 0) // >0 means ship exists on that spot
+   {
+	   switch(_board[x][y].second)
+	   {
+			case 1:	// Destroyer is here (size 2)
+				// Mark ship as hit
+				break;
+			case 2:	// Submarine is here (size 3)
+				// Mark ship as hit
+				break;
+			case 3:	// Cruiser is here	 (size 3)
+				// Mark ship as hit
+				break;
+			case 4:	// Battleship is here(size 4)
+				// Mark ship as hit
+				break;
+			case 5: // Carrier is here 	 (size 5)
+				// Mark ship as hit
+				break;
+	   }
+   }
+   else
+   {
+	   // FIXME: No ship was hit. Announce to player?
+   }
+
 }
 
 void Board::placeShip(Ship ship)
