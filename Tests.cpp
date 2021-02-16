@@ -4,6 +4,21 @@
 #include "Catch.hpp"
 #include "Ship.hpp"
 #include "Board.hpp"
+#include <iostream>
+
+//prints a 2D vector
+//templat type must have operator<<
+template <class t>
+void print2DVector(const vector<vector<t>> vec) {
+	for (auto i : vec) {
+		for (auto j : i) {
+			std::cout << j;
+		}
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+}
+
 
 TEST_CASE("Board Design")
 {
@@ -32,9 +47,16 @@ TEST_CASE("Board Design")
 	}
 	SECTION("Print the board")
 	{
-		Board print;
+		Board print(1);
 		vector < vector<char>> testVector(10, vector<char>(10, '*'));
-		REQUIRE(testVector == print.getPrintableBoard);
+		print2DVector(print.getPrintableBoard());
+		REQUIRE(testVector == print.getPrintableBoard());
+		print.shootBoard(0, 0);
+		print.shootBoard(7, 2);
+		testVector[0][0] = 'O';
+		testVector[7][2] = 'O';
+		print2DVector(print.getPrintableBoard());
+		REQUIRE(testVector == print.getPrintableBoard());
 	}
 }
 
