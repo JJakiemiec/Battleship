@@ -30,3 +30,13 @@ fiddling around (1 hr)
 I decided to work on specifically the ship class for a little bit, mostly just to see if we 
 could solidify some of the more abstract parts of the class. I also got the ship to know where each
 space is (hopefully).
+
+2/16/21
+working on board
+
+I worked towards making board printable so that testing is easier. Primarilly, I worked on a member
+function that outputs the board as a 2D vector of characters. While working on it, I noticed that
+we needed more data within the board class, so I made a new member variable called boardtype, which
+keeps track of what kind of board the object is. This was made just to differentiate between the
+board that the player uses to place their ships / keep track of opponent's guesses vs the board that
+the player uses to keep track of their own guesses.
