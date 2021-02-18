@@ -39,6 +39,7 @@ public:
 	bool doesIndexExist(int x, int y);
 	bool isValidPlacement(int x, int y, direction dir, shipType type);
 	void shootBoard(int x, int y);
+	void createDefault();
 
 private:
 	vector<Tile> _board;
