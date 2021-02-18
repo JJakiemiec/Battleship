@@ -119,7 +119,7 @@ TEST_CASE("Shooting board") {
 	SECTION("If hits ship, mark ship as hit"){
 		Board testBoard;
 
-		testBoard.placeShip(4,4, battleship, up);
+		testBoard.placeShip(4,4, battleship, down);
 		REQUIRE(testBoard.getTile(4,4).isHit() == false);
 		testBoard.shootBoard(4,4);
 		REQUIRE(testBoard.getTile(4,4).isHit() == true);

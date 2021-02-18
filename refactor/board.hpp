@@ -34,7 +34,7 @@ public:
 	vector<Tile> getBoard();
 	boardType getBoardType();
 
-	Tile getTile(int x, int y);
+	Tile &getTile(int x, int y);
 	void placeShip(int x, int y,  shipType sType, direction dir);
 	bool doesIndexExist(int x, int y);
 	bool isValidPlacement(int x, int y, direction dir, shipType type);

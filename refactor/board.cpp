@@ -94,14 +94,14 @@ boardType Board::getBoardType() {
 	return _type;
 }
 
-Tile Board::getTile(int x, int y) {
-	for (auto i : _board) {
+Tile &Board::getTile(int x, int y) {
+	for (auto && i : _board) {
 		if (i.getXcoord() == x && i.getYcoord() == y)
 			return i;
 	}
 	throw "tile does not exist in board";
-
 }
+
 void Board::placeShip(int x, int y, shipType sType, direction dir) {
 	if (!isValidPlacement(x,y,dir,sType))
 		throw "cannot place ship on board";
