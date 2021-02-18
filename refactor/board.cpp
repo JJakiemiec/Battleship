@@ -134,7 +134,17 @@ bool Board::doesIndexExist(int x, int y) {
 }
 
 void Board::shootBoard(int x, int y){
-	Tile grabTile = getTile(x,y);
-	grabTile.setIsHit(true);
+	// Empty Spot
+	if (doesIndexExist(x,y) == false){
+		Tile temp(x,y, noShip, true);
+		_board.push_back(temp);
+	}
+	// Tile already exists, either hit
+	if (doesIndexExist(x,y) == true)
+	{
+		if(getTile(x,y).isHit() == true){
+			
+		}
+	}
 }
 

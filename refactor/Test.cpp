@@ -88,27 +88,15 @@ TEST_CASE("Placing ships on the board") {
 TEST_CASE("Shooting board") {
 	SECTION("Can shoot empty spot and marks as hit"){
 		Board testBoard;
-		// testBoard.createDefault();
-		// for (auto i : testBoard.getBoard())
-		// {
-		// 	std::cout << i << " ";
-		// }
-		
 
-		Tile testTile(3,1, noShip, false);
-		REQUIRE(testTile.isHit() == false);
 		testBoard.shootBoard(3,1);
-		REQUIRE(testTile.isHit() == true);
+		REQUIRE(testBoard.getTile(3,1).isHit() == true);
 
-		Tile testTile2(7,4, noShip, false);
-		REQUIRE(testTile2.isHit() == false);
-		testBoard.shootBoard(7,4);
-		REQUIRE(testTile2.isHit() == true);
+		testBoard.shootBoard(4,3);
+		REQUIRE(testBoard.getTile(4,3).isHit() == true);
 
-		Tile testTile3(4,6, noShip, false);
-		REQUIRE(testTile3.isHit() == false);
-		testBoard.shootBoard(4,6);
-		REQUIRE(testTile3.isHit() == true);
+		testBoard.shootBoard(7,0);
+		REQUIRE(testBoard.getTile(7,0).isHit() == true);
 
 	}
 	SECTION("Cannot shoot at already shot spot"){
