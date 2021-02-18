@@ -145,6 +145,10 @@ void Board::shootBoard(int x, int y){
 		if(getTile(x,y).isHit() == true){
 			throw "Spot has already been shot!";
 		}
+		else{
+			getTile(x,y).setIsHit(true);
+		}
 	}
+
 }
 
