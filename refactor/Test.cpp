@@ -100,7 +100,21 @@ TEST_CASE("Shooting board") {
 
 	}
 	SECTION("Cannot shoot at already shot spot"){
-	
+		Board testBoard;
+
+		testBoard.shootBoard(0,0);
+		REQUIRE(testBoard.getTile(0,0).isHit() == true);
+		REQUIRE_THROWS_WITH(testBoard.shootBoard(0,0), "Spot has already been shot!");
+
+		testBoard.shootBoard(6,3);
+		REQUIRE(testBoard.getTile(6,3).isHit() == true);
+		REQUIRE_THROWS_WITH(testBoard.shootBoard(6,3), "Spot has already been shot!");
+
+		testBoard.shootBoard(0,8);
+		REQUIRE(testBoard.getTile(0,8).isHit() == true);
+		REQUIRE_THROWS_WITH(testBoard.shootBoard(0,8), "Spot has already been shot!");
+
+
 	}
 	SECTION("If hits ship, mark ship as hit"){
 
