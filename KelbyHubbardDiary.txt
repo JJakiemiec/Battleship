@@ -72,3 +72,16 @@ Solo Work (Developer)
             BUT will have to backtrack a lot of our work.
             Worth it?
             Will discuss with Jacob.
+
+Wed. February 17, 2021:
+1 hour (intermittent / via Discord)
+Project Owner Discussion with Jacob
+    Revamping how the program is laid out. Jacob wrote start of it under the "refactor". Board and
+    tiles manage everything -- no more duplication and excessive talking to between classes.
+    Redoing some work but overall the implementation is easier to understand and more portable for later
+    expansions.
+
+Thur. February 18, 2021:
+10:00AM -> ???
+Solo Work (Developer)
+    Adding functions to "refactor".
