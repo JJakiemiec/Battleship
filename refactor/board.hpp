@@ -10,6 +10,9 @@
 #include <vector>
 using std::vector;
 #include <exception>
+#include <iomanip>
+
+
 
 //boardType
 //used to tell what kind of board the current board object is
@@ -39,7 +42,7 @@ public:
 	bool doesIndexExist(int x, int y);
 	bool isValidPlacement(int x, int y, direction dir, shipType type);
 	void shootBoard(int x, int y);
-
+	void printBoard();
 private:
 	vector<Tile> _board;
 	boardType _type;

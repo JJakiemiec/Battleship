@@ -4,6 +4,7 @@
 
 #include "board.hpp"
 #include <exception>
+#include <iostream>
 
 //helper functions
 bool Board::isValidPlacement(int x, int y, direction dir, shipType type) {
@@ -152,3 +153,33 @@ void Board::shootBoard(int x, int y){
 
 }
 
+void Board::printBoard(){
+	std::cout << std::setw(5) << " ";
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << std::setw(5) << i;
+	}
+	std::cout << std::endl;
+	for (int x = 0; x < 10; x++){
+		std::cout << std::setw(5) << x;
+		for (int y = 0; y < 10; y++){
+			if (doesIndexExist(x,y) == true)
+			{
+				if (getTile(x,y).isHit() == true && getTile(x,y).getShipType() != noShip){
+					std::cout << std::setw(5) << "H"; // Hit a ship
+				}
+				else if (getTile(x,y).isHit() == true){
+					std::cout << std::setw(5) << "S"; // Shot but no ship
+				}
+				else{
+					std::cout << std::setw(5) << "W"; // Water / unknown
+				}
+				
+			}
+			else{
+				std::cout << std::setw(5) << "W"; 	  // Water / unknown
+			}
+		}
+		std::cout << std::endl;
+	}
+}

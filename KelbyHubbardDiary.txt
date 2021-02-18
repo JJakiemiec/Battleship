@@ -82,7 +82,7 @@ Project Owner Discussion with Jacob
     expansions.
 
 Thur. February 18, 2021:
-10:00AM -> ???
+10:00AM -> 1:00PM
 Solo Work (Developer)
     Adding functions to "refactor".
         Created test functions
@@ -113,4 +113,7 @@ Solo Work (Project Owner)
                 Print rules
                 Print viewable board
                 Switch opponents screen
-                
+Solo Work (Developer)
+    Worked on Board::printBoard()
+        Now prints board.
+            FIXME: x and y are swapped????
