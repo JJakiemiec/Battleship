@@ -132,3 +132,8 @@ bool Board::doesIndexExist(int x, int y) {
 	}
 	return false;
 }
+
+void Board::shootBoard(int x, int y){
+	Tile grabTile = getTile(x,y);
+	grabTile.setIsHit(true);
+}
