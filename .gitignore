@@ -1,7 +1,6 @@
 Board.o
 main
 Ship.o
-Makefile
 Source.o
 Tests.o
 refactor/Tile.o
