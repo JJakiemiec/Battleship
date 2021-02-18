@@ -96,7 +96,7 @@ boardType Board::getBoardType() {
 }
 
 Tile &Board::getTile(int x, int y) {
-	for (auto && i : _board) {
+	for (auto & i : _board) {
 		if (i.getXcoord() == x && i.getYcoord() == y)
 			return i;
 	}
