@@ -117,6 +117,24 @@ TEST_CASE("Shooting board") {
 
 	}
 	SECTION("If hits ship, mark ship as hit"){
+		Board testBoard;
 
+		testBoard.placeShip(4,4, battleship, up);
+		REQUIRE(testBoard.getTile(4,4).isHit() == false);
+		testBoard.shootBoard(4,4);
+		REQUIRE(testBoard.getTile(4,4).isHit() == true);
+
+		testBoard.placeShip(3,6, destroyer, right);
+		REQUIRE(testBoard.getTile(3,6).isHit() == false);
+		testBoard.shootBoard(3,6);
+		REQUIRE(testBoard.getTile(3,6).isHit() == true);
+		REQUIRE(testBoard.getTile(4,6).isHit() == false);
+		testBoard.shootBoard(4,6);
+		REQUIRE(testBoard.getTile(4,6).isHit() == true);
+
+		testBoard.placeShip(0,0, cruiser, up);
+		REQUIRE(testBoard.getTile(0,0).isHit() == false);
+		testBoard.shootBoard(0,0);
+		REQUIRE(testBoard.getTile(0,0).isHit() == true);
 	}
 }
