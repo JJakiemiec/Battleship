@@ -140,7 +140,7 @@ void Board::shootBoard(int x, int y){
 		Tile temp(x,y, noShip, true);
 		_board.push_back(temp);
 	}
-	// Tile already exists, either hit
+	// Tile already exists
 	else if (doesIndexExist(x,y) == true)
 	{
 		if(getTile(x,y).isHit() == true){
