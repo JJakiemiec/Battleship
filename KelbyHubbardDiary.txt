@@ -82,7 +82,7 @@ Project Owner Discussion with Jacob
     expansions.
 
 Thur. February 18, 2021:
-10:00AM -> 2:00PM
+10:00AM -> 2:15PM
 Solo Work (Developer)
     Adding functions to "refactor".
         Created test functions
@@ -118,3 +118,4 @@ Solo Work (Developer)
         Now prints board.
             FIXME: x and y are swapped????
         Fixed getTile bug.
+        Cleaned up git repo. (Need to use branches next time)
