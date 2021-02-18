@@ -85,3 +85,32 @@ Thur. February 18, 2021:
 10:00AM -> ???
 Solo Work (Developer)
     Adding functions to "refactor".
+        Created test functions
+            Shooting board
+                shooting empty spot
+                shooting already shot spot
+                shooting a ship
+        Created function
+            Board::placeShip
+        Fixed function 
+            Tile &Board::getTile(int x, int y);
+                Returns actual object now
+Solo Work (Project Owner)
+    Review what needs to be done next / before deadline
+        Work on presentation
+            Slideshow?
+    What's been done:
+        Game interfaces that are finished
+            Placing ships
+            Shooting
+            Checking if hit
+            Grabbing tiles
+            Error checking
+            Exceptions
+        Game interfaces that need to be finished
+            Main.cpp (the actual interactive environment)
+                Ask where to place ships
+                Print rules
+                Print viewable board
+                Switch opponents screen
+                
