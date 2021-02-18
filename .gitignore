@@ -1,6 +1,10 @@
 Board.o
 main
 Ship.o
+Test.o
+Tile.o
+board.o
+main.o
 Source.o
 Tests.o
 refactor/Tile.o

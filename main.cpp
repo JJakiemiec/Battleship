@@ -18,7 +18,7 @@ int main(){
     cout << "\nThe board will be laid out as such:\n";
     playerOneBoard.printBoard();
 
-    cout << "Each spot is represented by a letter:\n"
+    cout << "\nEach spot is represented by a letter:\n"
          << "W = Water / Unknown\n"
          << "H = HIT! You hit a ship at that location.\n"
          << "S = Shot. You've shot that location but nothing is there.\n";
