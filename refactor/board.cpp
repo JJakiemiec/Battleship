@@ -139,5 +139,12 @@ void Board::shootBoard(int x, int y){
 }
 
 void Board::createDefault(){
-
+	for (auto x = 0; x < 10; x++)
+		{
+			for (auto y = 0; y < 10; y++)
+			{
+				Tile temp(x,y, noShip, false);
+				_board.push_back(temp);
+			}
+		}
 }
