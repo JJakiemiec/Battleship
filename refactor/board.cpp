@@ -137,3 +137,7 @@ void Board::shootBoard(int x, int y){
 	Tile grabTile = getTile(x,y);
 	grabTile.setIsHit(true);
 }
+
+void Board::createDefault(){
+
+}
