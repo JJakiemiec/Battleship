@@ -38,6 +38,7 @@ public:
 	void placeShip(int x, int y,  shipType sType, direction dir);
 	bool doesIndexExist(int x, int y);
 	bool isValidPlacement(int x, int y, direction dir, shipType type);
+	void shootBoard(int x, int y);
 
 private:
 	vector<Tile> _board;

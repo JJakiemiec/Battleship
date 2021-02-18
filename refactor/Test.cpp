@@ -81,6 +81,33 @@ TEST_CASE("Placing ships on the board") {
 			REQUIRE(testBoard.doesIndexExist(8-i,9) == true);
 			REQUIRE(testBoard.getTile(8-i,9) == Tile(8-i,9, carrier, false));
 		}
+	}	
+}
+
+TEST_CASE("Shooting board") {
+	SECTION("Can shoot empty spot and marks as hit"){
+		Board testBoard;
+
+		Tile testTile(3,1, noShip, false);
+		REQUIRE(testTile.isHit() == false);
+		testBoard.shootBoard(3,1);
+		REQUIRE(testTile.isHit() == true);
+
+		Tile testTile2(7,4, noShip, false);
+		REQUIRE(testTile2.isHit() == false);
+		testBoard.shootBoard(7,4);
+		REQUIRE(testTile2.isHit() == true);
+
+		Tile testTile3(4,6, noShip, false);
+		REQUIRE(testTile3.isHit() == false);
+		testBoard.shootBoard(4,6);
+		REQUIRE(testTile3.isHit() == true);
+
 	}
+	SECTION("Cannot shoot at already shot spot"){
 	
+	}
+	SECTION("If hits ship, mark ship as hit"){
+
+	}
 }

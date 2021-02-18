@@ -4,3 +4,7 @@ Ship.o
 Makefile
 Source.o
 Tests.o
+refactor/Tile.o
+refactor/Test.o
+refactor/Catch.hpp
+refactor/board.o
