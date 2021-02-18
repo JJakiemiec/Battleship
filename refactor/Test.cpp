@@ -4,6 +4,7 @@
 #include "Catch.hpp"
 #include "Tile.hpp"
 #include "board.hpp"
+#include <iostream>
 
 TEST_CASE("Tile testing") {
 	SECTION("creating tiles") {
@@ -46,24 +47,6 @@ TEST_CASE("Board creation") {
 		REQUIRE(testBoard.getBoard() == testVector);
 		REQUIRE(testBoard.getBoardType() == placementBoard);	
 	}
-	SECTION("Create a 10x10 board by using default function")
-	{
-		Board testBoard;
-
-		vector<Tile> testVector;
-		for (auto x = 0; x < 10; x++)
-		{
-			for (auto y = 0; y < 10; y++)
-			{
-				Tile temp(x,y, noShip, false);
-				testVector.push_back(temp);
-			}
-		}
-		testBoard.createDefault();
-		REQUIRE(testBoard.getBoard().size() == 100);
-		REQUIRE(testBoard.getBoard() == testVector);
-		REQUIRE(testBoard.getBoardType() == placementBoard);
-	}
 }
 
 TEST_CASE("Placing ships on the board") {
@@ -105,7 +88,13 @@ TEST_CASE("Placing ships on the board") {
 TEST_CASE("Shooting board") {
 	SECTION("Can shoot empty spot and marks as hit"){
 		Board testBoard;
+		// testBoard.createDefault();
+		// for (auto i : testBoard.getBoard())
+		// {
+		// 	std::cout << i << " ";
+		// }
 		
+
 		Tile testTile(3,1, noShip, false);
 		REQUIRE(testTile.isHit() == false);
 		testBoard.shootBoard(3,1);
