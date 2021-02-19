@@ -121,3 +121,8 @@ Solo Work (Developer)
     Cleaned up git repo. (Need to use branches next time)
     Added game instructions / game startup menu.  
     Updated KanBan Board.
+8:00PM -> 9:00PM
+    Created slideshow for presentation
+    Review what we've accomplished
+    Review what needs to be done 
+    Got ready for presentation

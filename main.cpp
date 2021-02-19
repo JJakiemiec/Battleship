@@ -10,7 +10,7 @@ using std::stringstream;
 
 //THIS IS FOR CLEARING THE SCREEN
 //IT MIGHT NOT WORK FOR YOUR IDE/OS
-#include<stdlib.h>
+#include <stdlib.h>
 using std::system; //for system("CLS"); which clears the console
 
 #include "board.hpp"
