@@ -168,6 +168,11 @@ void Board::printBoard(){
 				if (getTile(x,y).isHit() == true && getTile(x,y).getShipType() != noShip){
 					std::cout << std::setw(5) << "H"; // Hit a ship
 				}
+				//maybe temporary parameter to use while testing
+				if (getTile(x, y).isHit() == false && getTile(x, y).getShipType() != noShip) {
+					std::cout << std::setw(5) << getTile(x, y).getShipType();
+				}
+				//
 				else if (getTile(x,y).isHit() == true){
 					std::cout << std::setw(5) << "S"; // Shot but no ship
 				}
