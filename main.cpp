@@ -8,6 +8,11 @@ using std::string;
 #include <sstream> //for stringstream
 using std::stringstream;
 
+//THIS IS FOR CLEARING THE SCREEN
+//IT MIGHT NOT WORK FOR YOUR IDE/OS
+#include<stdlib.h>
+using std::system; //for system("CLS"); which clears the console
+
 #include "board.hpp"
 #include "Tile.hpp"
 
@@ -46,6 +51,91 @@ direction nameToDirection(string name) {
 	return left;
 }
 
+void promptClear() {
+	cout << "PRESS ENTER TO CONTINUE\n";
+	string temp;
+	getline(cin, temp);
+	system("CLS");
+}
+
+void placeSpecificShip(Board& board, shipType ship) {
+	while (true) {
+		//variables
+		string input;
+		stringstream sstream;
+		direction dir;
+		int xCoord;
+		int yCoord;
+
+
+		//loop that checks for valid xy coordinates
+		board.printBoard();
+		while (true) {
+			cout << "\nWhere do you want to place the ship?\n";
+			cout << "\nenter in form of \"x y\" where x and y are between 0 and 9 inclusive\n";
+			getline(cin, input);
+
+
+			sstream << input;
+			sstream >> xCoord;
+			sstream >> yCoord;
+			sstream.clear();
+			if (((xCoord >= 0) && (xCoord <= 9) && (yCoord >= 0) && (yCoord <= 9)))
+				break;
+
+		}
+
+		system("CLS");
+		cout << "x:" << xCoord << "\ty: " << yCoord << "\n";
+		board.printBoard();
+		
+
+		//loop that checks for valid direction
+		while (true) {
+			cout << "\nWhat direction do you want to place the ship?\n";
+			cout << "options are: up, down, left, right\n";
+			getline(cin, input);
+			for (char& c : input)
+				c = toupper(c);
+			dir = nameToDirection(input);
+			if (isDirection(input))
+				break;
+		}
+
+		//try catch block that tries to place the ship with the specified parameters onto the board
+		//breaks from the outer loop if successful
+		bool escapeFlag = true;
+		try {
+			board.placeShip(xCoord, yCoord, ship, dir);
+		}
+		catch (...) {
+			cout << "invalid ship placement\n";
+			escapeFlag = false;
+		}
+		if (escapeFlag)
+			break;
+
+	}
+	system("CLS");
+	cout << "\"successfully\" set ship\n\n";
+	board.printBoard();
+	promptClear();
+}
+
+
+void playerSetUP(Board& player) {
+	cout << "Placing Carrier:\n";
+	placeSpecificShip(player, carrier);
+	cout << "Placing Battleship:\n";
+	placeSpecificShip(player, battleship);
+	cout << "Placing Cruiser:\n";
+	placeSpecificShip(player, cruiser);
+	cout << "Placing Submarine:\n";
+	placeSpecificShip(player, submarine);
+	cout << "Placing Destroyer:\n";
+	placeSpecificShip(player, destroyer);
+}
+
 
 
 
@@ -64,10 +154,12 @@ int main(){
     cout << "\nThe board will be laid out as such:\n";
     playerOneBoard.printBoard();
 
-    cout << "\nEach spot is represented by a letter:\n"
-         << "W = Water / Unknown\n"
-         << "H = HIT! You hit a ship at that location.\n"
-         << "S = Shot. You've shot that location but nothing is there.\n";
+	cout << "\nEach spot is represented by a letter:\n"
+		<< "W = Water / Unknown\n"
+		<< "H = HIT! You hit a ship at that location.\n"
+		<< "S = Shot. You've shot that location but nothing is there.\n"
+		<< "A number represents a ship of that length\n"
+		<< "note that both cruisers and battleships are represented with a 4\n";
 
     cout << "\nTo place your ships you will state the x and y\n"
          << "coordinates. x is horizontal and y is verticle.\n"
@@ -89,75 +181,19 @@ int main(){
 	//adds one valid ship to the board
 	//outside while loop continues looping until place ship does not throw
 	//the inner while loops go through each parameter (ie ship, x, y, direction) until a valid value is entered
-	while (true) {
-		//variables
-		string input;
-		stringstream sstream;
-		shipType ship;
-		direction dir;
-		int xCoord;
-		int yCoord;
+	promptClear();
+	cout << "Player 1 setup:\n";
+	playerSetUP(playerOneBoard);
+	cout << "Player 2 setup:\n";
+	playerSetUP(playerTwoBoard);
+	system("CLS");
 
-		//loop that checks for valid ship type
-		while (true) {
-			cout << "\nWhat ship do you want to place?\n";
-			cout << "(carrier, battleship, cruiser, submarine, destroyer): ";
-			getline(cin, input);
-			for (char& c : input)
-				c = toupper(c);
-			ship = nameToShipType(input);
-			if (isShipName(input)) {
-				break;
-			}
-		}
-		cout << input << "\n";
-		
-		//loop that checks for valid xy coordinates
-		while (true) {
-			cout << "\nWhere do you want to place the ship?\n";
-			cout << "\nenter in form of \"x y\" where x and y are between 0 and 9 inclusive\n";
-			getline(cin, input);
-
-
-			sstream << input;
-			sstream >> xCoord;
-			sstream >> yCoord;
-			sstream.clear();
-			if (((xCoord >= 0) && (xCoord <= 9) && (yCoord >= 0) && (yCoord <= 9)))
-				break;
-
-		}
-		cout << "x:" << xCoord << "\ty: " << yCoord << "\n";
-
-		//loop that checks for valid direction
-		while (true) {
-			cout << "\n what direction do you want to place the ship?\n";
-			cout << "options are: up, down, left, right\n";
-			getline(cin, input);
-			for (char& c : input)
-				c = toupper(c);
-			dir = nameToDirection(input);
-			if (isDirection(input))
-				break;
-		}
-		cout << input<<"\n";
-
-		//try catch block that tries to place the ship with the specified parameters onto the board
-		//breaks from the outer loop if successful
-		bool escapeFlag = true;
-		try {
-			playerOneBoard.placeShip(xCoord, yCoord, ship, dir);
-		}
-		catch (...) {
-			cout << "invalid ship placement\n";
-			escapeFlag = false;
-		}
-		if (escapeFlag)
-			break;
-
-	}
-	cout << "\"successfully\" set ship\n\n";
 	playerOneBoard.printBoard();
+	cout << "\n\n";
+	playerTwoBoard.printBoard();
+
+	
+
  
     
     return 0;
