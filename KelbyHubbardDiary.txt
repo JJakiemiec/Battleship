@@ -1,7 +1,7 @@
 // Kelby Hubbard
 
 Wed. February 3, 2021:
-3:45PM -> 4:30PM
+3:45PM -> 4:30PM 
 Meeting with Jacob Jakiemiec
     Discussed User Stories (and difficulties)
     Initial Design Requirements
@@ -21,7 +21,7 @@ Started coding. Worked on Ship.cpp / Ship.hpp
     Implemented Ship class and Ship::getSize()
 
 Thurs. February 4, 2021:
-7:30PM -> 9:30PM
+6:30PM -> 9:30PM
 Meeting with Jacob Jakiemiec
     Pair Programming:
         Created test cases for Board Design and Ship Design
@@ -36,3 +36,93 @@ Meeting with Jacob Jakiemiec
             Wrote getCords
             wrote getShipType
             WRITING default constructor 
+
+Tue. February 16, 2021:
+1:00PM -> 2:00PM
+Solo Work (Project Owner)
+    Review what is capable in project currently and what needs to be worked on before deadline (Fri)
+        A way to startup the game
+        View Board
+        Place ships
+        Play?
+    Added new User Story of creating the main source file  
+        Allows games to be started, instructions to be printed, and exited if they'd like
+    Review previous meetings--
+        Pair Programming:  
+            In my opinion Pair Programming was effective, but I don't think it is necessarily more effective
+            than working on our own. It is nice having the other person there in the meeting and to be able
+            to disucss what you are currently writing and get two minds on the topic. I don't think that it
+            is more effective than having both people write seperate code though. Personally I don't think 
+            less mistakes were made during pair prorgramming vs doing on our own. I would like to perhaps
+            try a different way of pair programming being that both people are in a call / conference 
+            together and are working on SEPERATE pieces of code. But allowing to ask questions to the 
+            partner in real time could make some really convinient code and ensure you don't hit any 
+            "road blocks".
+2:00PM -> 3:00PM
+Solo Work (Developer)
+    Added to function Board::shootBoard
+        Checks if a ship was shot.
+            If no ship was shot, tell player
+            If a ship was shot it has to mark ship as hit and tell player
+    This might be easier without having to talk to board first. Why have a board that holds ships
+    and ship locations if the ship holds all the information. After shooting board you'd just have
+    to shoot ship also. Very redudant. Perhaps everything go through ship class, and board class either
+    doesn't exist OR just holds where something has been shot?
+        More efficient, easier to visualize
+            BUT will have to backtrack a lot of our work.
+            Worth it?
+            Will discuss with Jacob.
+
+Wed. February 17, 2021:
+1 hour (intermittent / via Discord)
+Project Owner Discussion with Jacob
+    Revamping how the program is laid out. Jacob wrote start of it under the "refactor". Board and
+    tiles manage everything -- no more duplication and excessive talking to between classes.
+    Redoing some work but overall the implementation is easier to understand and more portable for later
+    expansions.
+
+Thur. February 18, 2021:
+10:00AM -> 3:00PM
+Solo Work (Developer)
+    Adding functions to "refactor".
+        Created test functions
+            Shooting board
+                shooting empty spot
+                shooting already shot spot
+                shooting a ship
+        Created function
+            Board::placeShip
+        Fixed function 
+            Tile &Board::getTile(int x, int y);
+                Returns actual object now
+Solo Work (Project Owner)
+    Review what needs to be done next / before deadline
+        Work on presentation
+            Slideshow?
+    What's been done:
+        Game interfaces that are finished
+            Placing ships
+            Shooting
+            Checking if hit
+            Grabbing tiles
+            Error checking
+            Exceptions
+        Game interfaces that need to be finished
+            Main.cpp (the actual interactive environment)
+                Ask where to place ships
+                Print rules
+                Print viewable board
+                Switch opponents screen
+Solo Work (Developer)
+    Worked on Board::printBoard()
+        Now prints board.
+            FIXME: x and y are swapped????
+    Fixed getTile bug.
+    Cleaned up git repo. (Need to use branches next time)
+    Added game instructions / game startup menu.  
+    Updated KanBan Board.
+8:00PM -> 9:00PM
+    Created slideshow for presentation
+    Review what we've accomplished
+    Review what needs to be done 
+    Got ready for presentation

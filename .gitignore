@@ -1,6 +1,13 @@
 Board.o
 main
 Ship.o
-Makefile
+Test.o
+Tile.o
+board.o
+main.o
 Source.o
 Tests.o
+refactor/Tile.o
+refactor/Test.o
+refactor/Catch.hpp
+refactor/board.o
