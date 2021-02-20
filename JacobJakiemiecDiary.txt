@@ -40,3 +40,26 @@ we needed more data within the board class, so I made a new member variable call
 keeps track of what kind of board the object is. This was made just to differentiate between the
 board that the player uses to place their ships / keep track of opponent's guesses vs the board that
 the player uses to keep track of their own guesses.
+
+2/16/21
+refactoring
+(4 hr)
+
+We decided that the current set up for the game was bad. Having both the ship class and the boat class
+keep track of coordinates was both redundant and hard to work with. So we decided to get rid of both 
+the ship class, and to change up the boat class. The ship class was replaced with a tile class, and 
+the boat class now stored a vector of tiles. This vector is not the original 2D vector with every 
+possible tile that we first started with, but instead a vector of all non-default tiles (with default
+being non-shot empty tiles). As the game would be played, tiles would be added to the vector. 
+
+
+2/17/21
+placing ships on the board
+(2 hr)
+
+I left off where Kelby was on the actual gameplay portion of the game. He had made the introduction, which
+showed off the board and a brief introduction to the game. I first on getting a single ship onto the board,
+by asking the player for the ship, location and direction. Then I worked on getting all 5 ships placed on the
+board for a single person. And finally, I refactored the placing process into a function that could be called
+for each player. After the process was done, I made the game look nicer by implementing screen clears. I did
+this by using system("cls"), which works with windows only.
